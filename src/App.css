@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'); /* Font Awesome */
 
-/* General reset for all anchor tags */
-a {
-  text-decoration: none;
-}
-
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #0d0d0d;
+  background-color: #111;
   color: #f2f2f2;
 }
 
@@ -42,10 +37,11 @@ header h1 {
   gap: 2rem;
 }
 
-.game-card {
+.game-card-wrapper {
+  position: relative;
   width: 300px;
   max-width: 100%;
-  background-color: #111;
+  background-color: #222; /* Dark background for the game card */
   color: white;
   border-radius: 12px;
   padding: 1rem;
@@ -53,15 +49,27 @@ header h1 {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  transition: transform 0.3s ease;
 }
 
-.game-card:hover {
+.game-card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
 }
 
-.game-card img {
+.game-card-wrapper a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.game-card-wrapper .game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.game-card-wrapper img {
   width: 100%;
   height: 400px;
   object-fit: cover;
@@ -70,14 +78,14 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-.game-card h2 {
+.game-card-wrapper h2 {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0.5rem 0;
-  color: #fff;
+  color: #fff; /* White color for the title */
 }
 
-.game-card p {
+.game-card-wrapper p {
   color: #bbb;
   font-size: 0.95rem;
   margin-bottom: 1rem;
@@ -87,15 +95,16 @@ header h1 {
   overflow: hidden;
 }
 
-.game-card a {
-  color: #ff4747;
+.game-card-wrapper .view-playstore {
+  margin-top: 1rem;
+  color: #ff4747 !important; /* Ensure this color is applied */
+  text-decoration: none;
   font-weight: 600;
-  text-decoration: none; /* Removes underline */
-  transition: color 0.3s ease; /* Smooth color transition */
+  text-align: center;
 }
 
-.game-card a:hover {
-  color: #ff6161; /* Slight color change on hover */
+.game-card-wrapper .view-playstore:hover {
+  text-decoration: underline; /* Underline on hover for the View on Play Store link */
 }
 
 .contact {
@@ -108,7 +117,7 @@ header h1 {
 .contact h2 {
   text-align: center;
   font-size: 2rem;
-  color: #ff4747;
+  color: #ff4747; /* Red color */
 }
 
 .contact p {
@@ -130,7 +139,7 @@ header h1 {
 }
 
 .contact a {
-  color: #ff4747;
+  color: #ff4747; /* Red color */
   text-decoration: none;
 }
 

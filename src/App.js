@@ -31,11 +31,16 @@ function App() {
 
       <div className="games">
         {games.map((game, index) => (
-          <a href={game.link} target="_blank" rel="noopener noreferrer" className="game-card" key={index}>
-            <img src={game.image} alt={game.title} />
-            <h2>{game.title}</h2>
-            <p>{game.description}</p>
-          </a>
+          <div className="game-card-wrapper" key={index}>
+            <a href={game.link} target="_blank" rel="noopener noreferrer" className="game-card">
+              <img src={game.image} alt={game.title} />
+              <h2>{game.title}</h2>
+              <p>{game.description}</p>
+            </a>
+            <a href={game.link} target="_blank" rel="noopener noreferrer" className="view-playstore">
+              View on Play Store
+            </a>
+          </div>
         ))}
       </div>
 
