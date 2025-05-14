@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'); /* Font Awesome */
 
+/* General reset for all anchor tags */
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -48,11 +53,12 @@ header h1 {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
 }
 
 .game-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255,255,255,0.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
 }
 
 .game-card img {
@@ -83,8 +89,13 @@ header h1 {
 
 .game-card a {
   color: #ff4747;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.game-card a:hover {
+  color: #ff6161; /* Slight color change on hover */
 }
 
 .contact {
